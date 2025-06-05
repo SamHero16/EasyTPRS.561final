@@ -1,4 +1,4 @@
-#' Create TPRS
+#' Create Thin Plate Regression spline object.
 #'
 #' @param size The width or height of spatial surface. Size of TPRS becomes (size x size). Only makes square TPRS for now.
 #' @param spectral_density Spectral density for Gaussian process that generates TPRS. Defaults to 0.1.

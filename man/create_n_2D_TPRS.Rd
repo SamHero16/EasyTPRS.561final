@@ -2,7 +2,7 @@
 % Please edit documentation in R/TPRS_functions.R
 \name{create_n_2D_TPRS}
 \alias{create_n_2D_TPRS}
-\title{Create TPRS}
+\title{Create Thin Plate Regression spline object.}
 \usage{
 create_n_2D_TPRS(size, spectral_density = 0.1, n)
 }
@@ -17,7 +17,7 @@ create_n_2D_TPRS(size, spectral_density = 0.1, n)
 List with TPRS dataframe, omega 1 and 2 (Fourier frequency values corresponding the basis functions in expand.grid() format).
 }
 \description{
-Create TPRS
+Create Thin Plate Regression spline object.
 }
 \examples{
 TPRS = create_n_2D_TPRS(16, .1, 10)
