@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 # Purpose
 
 This is a wrapper package for easily creating and visualizing Thin Plate Regression Splines
