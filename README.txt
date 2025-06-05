@@ -1,13 +1,9 @@
----
-output: github_document
----
-
 # Purpose
 
 This is a wrapper package for easily creating and visualizing Thin Plate Regression Splines
 
 - The URL to the GitHub (i.e., the source code) is: https://github.com/SamHero16/EasyTPRS.561final
-- The URL to the Pkgdown webpage is:
+- The URL to the Pkgdown webpage is: https://samhero16.github.io/EasyTPRS.561final/
 
 # How to install
 This package is called `EasyTPRS.561final`. To install, run the following code (in R):
