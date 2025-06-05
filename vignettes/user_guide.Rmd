@@ -1,0 +1,48 @@
+---
+title: "User Guide"
+output: pagedown::html_paged
+---
+
+## Using EasyTPRS
+
+
+This package is designed to make created Thin Plate Regression Splines easy. We essentially provide a wrapper for 'mgcv' and 'spectralGP' to help with creating and visualizing TPRS. TPRS are a method of controlling for unmeasures spatial confounding. You essentially add however many basis splines you want to a spatial regression, and they hopefully absorb some unseen confounding, isolating the true effect. 
+
+Here is an example of a using TPRS in regression: You can see they can be used to correct for confounding and bring the beta estimate for x closer to the truth
+
+```{r, warning=F}
+library(EasyTPRS.561final)
+set.seed(20)
+size = 128
+gp=EasyTPRS.561final::simulate_gp(size, .5, plot = F)
+confounder=EasyTPRS.561final::simulate_gp(size, .5, plot = F)
+
+x = gp$process + .4*confounder$process
+y = x + rnorm(size**2, mean = 0, sd = 1) +  .4*confounder$process
+lm(y~x)
+```
+**As you can see, the true b1 is 1, but the confounder gives us an overestimate.**\ n
+
+```{r}
+tprs_obj = EasyTPRS.561final::create_n_2D_TPRS(size, n = 20)
+basis_splines = data.matrix(tprs_obj$TPRS)
+summary(lm(y~x + basis_splines))
+```
+**You can see the estimate gets better (closer to one).** \n
+
+
+####  You can also visualize the splines with visualize_2D_TPRS().
+
+```{r}
+visualize_2D_TPRS(tprs_obj = tprs_obj)
+```
+
+
+
+
+#### Also as a bonus, you can create a Gaussian process with simulate_gp, a wrapper for the spectralGP package:
+
+```{r}
+simulate_gp(128, spectral_density = .5, plot = T)
+```
+

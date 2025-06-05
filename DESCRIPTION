@@ -4,8 +4,20 @@ Title: What the Package Does (Title Case)
 Version: 0.1.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Makes quick Thin Plate Regression Splines and Visualizations
+Imports:
+  spectralGP,
+  mgcv,
+  broom,
+  ggplot2,
+  dplyr,
+  readr,
+  lmtest,
+  tidyr,
+  magrittr,
+  tidyselect
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.1
+URL: https://samhero16.github.io/EasyTPRS.561final/
